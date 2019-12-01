@@ -1,0 +1,19 @@
+// Creating a Person Object
+
+let Person = {
+  firstName : "Rahul",
+  lastName : "Kumar",
+  Age: "24",
+  Company: "Celigo",
+  Position: "Software Developer",
+};
+
+// printing the object
+console.log(Person);
+
+// Iterating over Object attributes and printing it
+Object.entries(Person).forEach(entry => {
+  let key = entry[0];
+  let value = entry[1];
+  console.log(key,value);
+});
