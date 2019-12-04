@@ -1,0 +1,64 @@
+let MetadataParser=function(_version,_channel,_keyField){
+        this._version= _version;
+        this._channel= _channel;
+        this._keyField= _keyField;
+    
+    Object.defineProperty(MetadataParser , '_version', {
+        get function() {
+            return this._version;
+        },
+        set function(value) {
+            return this._version = value;
+        }
+    })
+    
+    Object.defineProperty(MetadataParser , '_channel', {
+        get function() {
+            return this._channel;
+        },
+        set function(value) {
+            return this._channel = value;
+        }
+    })
+
+    Object.defineProperty(MetadataParser , '_keyField', {
+        get function() {
+            return this._keyField;
+        },
+        set function(value) {
+            return this._keyField = value;
+        }
+    })
+}
+
+// creating object of MetadataParser and displaying it.
+
+var metaDataParserObj = new MetadataParser("1","ABC","1");
+console.log(metaDataParserObj);
+console.log(metaDataParserObj._version);
+console.log(metaDataParserObj._channel);
+console.log(metaDataParserObj._keyField);
+
+
+var metaDataParserObj1 = new MetadataParser("111","ABC","1");
+var metaDataParserObj2 = new MetadataParser("112","DEF","2");
+var metaDataParserObj3 = new MetadataParser("113","GHI","3");
+var metaDataParserObj4 = new MetadataParser("114","JKL","4");
+
+let arr = [metaDataParserObj1,metaDataParserObj2,metaDataParserObj3,metaDataParserObj4]
+
+class getKeyFields{
+    getKeyFieldsMethod(JSON)
+    {
+        let keyFields=[];
+        for(let i=0;i<JSON.length;i++){
+            keyFields[i]=arr[i]._keyField
+            
+        }
+        return keyFields;
+    }
+    
+}
+
+let keyFieldsArray = new getKeyFields().getKeyFieldsMethod(arr);
+console.log(keyFieldsArray);
