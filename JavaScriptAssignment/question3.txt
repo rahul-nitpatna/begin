@@ -1,0 +1,34 @@
+
+let obj= [
+    {
+       channel : 'A',
+       name : 'shoe'
+    },
+    {
+      channel: 'A',
+      name : 'electronics'
+    },
+    {
+      channel : 'B',
+      name: 'apparel'
+    },
+    {
+      channel: 'C',
+      name: 'electronics'
+    }
+]
+var groupBy = function(xs, key) {
+  return xs.reduce(function(rv, x) {
+    (rv[x[key]] = rv[x[key]] || []).push(x);
+    return rv;
+  }, {});
+};
+var groupedObj = groupBy(obj, function(channel) {
+  return obj.channel;
+});
+
+
+
+console.log(groupedObj);
+
+
